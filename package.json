@@ -1,0 +1,35 @@
+{
+  "name": "morphdom-render",
+  "version": "1.0.0",
+  "description": "simple render function for morphdom applications",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "babel-node ./test/setup.js test/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AutoSponge/morphdom-render.git"
+  },
+  "author": "Paul Grenier <pgrenier@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AutoSponge/morphdom-render/issues"
+  },
+  "homepage": "https://github.com/AutoSponge/morphdom-render#readme",
+  "dependencies": {
+    "morphdom": "^1.4.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.11.0",
+    "babel-register": "^6.9.0",
+    "glob": "^7.0.5",
+    "jsdom": "^9.3.0",
+    "tape": "^4.6.0"
+  }
+}
