@@ -82,3 +82,18 @@ test('complex render', (t) => {
 
   t.end()
 })
+
+test('document fragment render', (t) => {
+  reset()
+  const frag = document.createDocumentFragment()
+  frag.appendChild(html('<li>1</li>'))
+  frag.appendChild(html('<li>2</li>'))
+  const list = html(`<ul id="a"></ul>`)
+  render(document.body, list)
+  render(list, frag)
+  const a = document.querySelector('#a')
+  t.equal(a.childElementCount, 2)
+  t.equal(a.childNodes[0].textContent, '1')
+  t.equal(a.childNodes[1].textContent, '2')
+  t.end()
+})
