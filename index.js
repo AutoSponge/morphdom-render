@@ -1,5 +1,7 @@
 import morphdom from 'morphdom'
 
+const onBeforeElUpdated = (fromEl, toEl) => !fromEl.isEqualNode(toEl)
+
 export default (container, ...elms) => {
   const children = [...container.childNodes]
   const length = Math.max(children.length, elms.length)
@@ -12,7 +14,7 @@ export default (container, ...elms) => {
           container.replaceChild(elm, child)
         } else {
           if (!child.isEqualNode(elm)) {
-            morphdom(child, elm)
+            morphdom(child, elm, {onBeforeElUpdated})
           }
         }
       } else {
